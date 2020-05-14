@@ -12,8 +12,7 @@ namespace AwsDotnetCsharp
             RuleFor(filename => filename.PathParameters["Filename"]).NotNull().WithMessage("You must provide a file name")
                 .NotEmpty().WithMessage("You must provide a file name")
                 .DependentRules(() => {
-                    RuleFor(filename => filename.PathParameters["Filename"]).Must(HasExtension)
-                    .WithMessage("You must provide a filename with extension. e.g. 'cat.jpg'")
+                    RuleFor(filename => filename.PathParameters["Filename"])
                     .Must(DoesNotContainAForwardSlash).WithMessage("You must not include any slashes in your filename. e.g. 'cat.jpg'");
                 });
         }

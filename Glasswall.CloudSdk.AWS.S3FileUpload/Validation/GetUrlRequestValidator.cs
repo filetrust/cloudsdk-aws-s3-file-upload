@@ -12,8 +12,7 @@ namespace AwsDotnetCsharp
             RuleFor(filename => filename.QueryStringParameters["fileName"]).NotNull().WithMessage("You must provide a file name")
                 .NotEmpty().WithMessage("You must provide a file name")
                 .DependentRules(() => {
-                    RuleFor(filename => filename.QueryStringParameters["fileName"]).Must(HasExtension)
-                    .WithMessage("You must provide a filename with extension. e.g. 'cat.jpg'")
+                    RuleFor(filename => filename.QueryStringParameters["fileName"])
                     .Must(DoesNotContainAForwardSlash).WithMessage("You must not include any slashes in your filename. e.g. 'cat.jpg'");
                      });
             RuleFor(filename => filename.QueryStringParameters["region"]).NotNull().WithMessage("You must provide a region")
