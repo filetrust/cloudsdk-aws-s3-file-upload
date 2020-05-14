@@ -245,5 +245,5 @@ _Pvt_Extensions
 # Serverless directories
 .serverless
 
-.vs
+.VS
 obj
