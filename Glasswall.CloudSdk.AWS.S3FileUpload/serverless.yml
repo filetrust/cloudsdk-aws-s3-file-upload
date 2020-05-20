@@ -59,6 +59,7 @@ functions:
               - X-Amz-Security-Token
               - X-Amz-User-Agent
             allowCredentials: false
+          private: true
     tags:
         PostUrl: Creating URL to upload file. 
 
@@ -89,6 +90,7 @@ functions:
               - X-Amz-Security-Token
               - X-Amz-User-Agent
             allowCredentials: false
+          private: true
     tags:
         DownloadUrl: Creating URL to download file from S3 bucket. 
 
