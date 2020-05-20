@@ -41,7 +41,7 @@ jobs:
     - name: npm install
       run: npm install
       working-directory: ${{env.working-directory}}
-    - name: serverless deploy to qa 🚀        
+    - name: serverless deploy to data-repo 🚀        
       uses: aaronpanch/action-serverless@v1.0.0      
       with:
           args: deploy --stage data-repo            
