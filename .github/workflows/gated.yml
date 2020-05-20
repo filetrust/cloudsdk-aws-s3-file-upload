@@ -1,0 +1,30 @@
+name: Gated .net Build
+
+on:
+  pull_request:
+    branches: [ develop ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    env:
+      working_directory: ./Glasswall.CloudSdk.AWS.S3FileUpload    
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2 
+        with:
+          submodules: true
+          token: ${{ secrets.TOKEN_GITHUB }}
+      - name: Setup .NET Core 🔧
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 2.1.806
+      - name: Install dependencies 🔧
+        run: dotnet restore
+        working-directory:  ${{env.working-directory}}
+      - name: Build 🔨
+        run: dotnet build --configuration Release --no-restore
+        working-directory:  ${{env.working-directory}}
+#       - name: Test 🧪
+#         run: dotnet test --no-restore --verbosity normal
