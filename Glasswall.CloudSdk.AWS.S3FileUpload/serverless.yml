@@ -29,7 +29,7 @@ provider:
     ObjectKey: test-output 
     RegionEndpoint: eu-west-1
   tags: # Tags that will be added to each of the deployment resources
-    APIKeyManagement: Lambda Authorizer
+    S3FileUpload: Generate upload and download presigned URLS
   usagePlan: # Optional usage plan configuration   
     throttle:
       burstLimit: 25
