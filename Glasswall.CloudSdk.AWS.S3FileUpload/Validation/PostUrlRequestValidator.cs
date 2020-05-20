@@ -2,7 +2,7 @@
 using FluentValidation;
 using System.IO;
 
-namespace AwsDotnetCsharp
+namespace S3FileUpload.Validation
 {
     public class PostUrlRequestValidator : AbstractValidator<APIGatewayProxyRequest>
     {

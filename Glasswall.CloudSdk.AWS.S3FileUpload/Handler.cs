@@ -3,10 +3,14 @@ using Amazon.Lambda.APIGatewayEvents;
 using System.Collections.Generic;
 using Newtonsoft.Json;
 using System;
+using S3FileUpload.Validation;
+using S3FileUpload.Models;
+using S3FileUpload.Logic;
+using S3FileUpload.Boundaries;
 
 [assembly:LambdaSerializer(typeof(Amazon.Lambda.Serialization.Json.JsonSerializer))]
 
-namespace AwsDotnetCsharp
+namespace S3FileUpload
 {
     public class Handler
     {
@@ -14,7 +18,6 @@ namespace AwsDotnetCsharp
         public APIGatewayProxyResponse GenPostPresignedURLHandler(APIGatewayProxyRequest request)
         {
             var requestValidator = new PostUrlRequestValidator();
-            LambdaLogger.Log("Environmental Variables:" + JsonConvert.SerializeObject(System.Environment.GetEnvironmentVariables()));
 
             var requestValidatorResult = requestValidator.Validate(request);
 

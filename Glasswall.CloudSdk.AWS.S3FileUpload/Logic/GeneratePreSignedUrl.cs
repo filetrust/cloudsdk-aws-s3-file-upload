@@ -2,9 +2,10 @@
 using Amazon.Lambda.Core;
 using Amazon.S3;
 using Amazon.S3.Model;
+using S3FileUpload.Models;
 using System;
 
-namespace AwsDotnetCsharp
+namespace S3FileUpload.Logic
 {
     public class GeneratePreSignedUrl
     {

@@ -1,7 +1,7 @@
 ﻿using Amazon.S3;
 using System;
 
-namespace AwsDotnetCsharp
+namespace S3FileUpload.Models
 {
     public class S3LookupModel
     {
