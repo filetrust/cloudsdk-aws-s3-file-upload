@@ -50,6 +50,7 @@ jobs:
 
   package-and-deploy-to-qa:
     runs-on: ubuntu-latest
+    needs: [package-and-deploy-to-data-repo]
     env:
       working-directory: ./Glasswall.CloudSdk.AWS.S3FileUpload
       AWS_ACCESS_KEY_ID: ${{ secrets.QA_SECRET_ID }}
@@ -106,7 +107,7 @@ jobs:
         
   merge-to-master:
     runs-on: ubuntu-latest
-    needs: [ package-and-deploy-to-data-repo, package-and-deploy-to-qa]
+    needs: [package-and-deploy-to-qa]
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@master
