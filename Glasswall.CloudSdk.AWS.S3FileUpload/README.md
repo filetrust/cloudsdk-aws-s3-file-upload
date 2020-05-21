@@ -1,5 +1,17 @@
 S3 FileUpload
 
+AWS information: 
+ * QA endpoint: qa-generatepresignedurl 
+ * QA region: eu-west-1
+ 
+ * STAGE endpoint: stage-generatepresignedurl 
+ * STAGE region: eu-west-1
+ 
+ * PROD endpoint: prod-generatepresignedurl 
+ * PROD region: eu-west-1
+
+----
+
 To perform a request to these two endpoints:
  - Each of these API calls require an API key. 
 
@@ -23,6 +35,9 @@ Endpoint used to generate a pre-signed URL- URL, which will allow a customer to 
         Request GET /generate-presigned-url
         
         curl --location --request GET '/API URL?query string parameters'
+        
+        Query parameters: 
+         * bucketName=[bucket name]&objectPath=[path to file in bucket]&region=[bucket region]&fileName=[file name]
         
         Response
         {"PresignedUrl":"https://presignedurl",
