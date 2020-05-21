@@ -25,7 +25,7 @@ provider:
   runtime: dotnetcore2.1
   region: eu-west-1
   environment: # Service wide environment variables
-    BucketName: gw-perf-test-output-eu1-2
+    BucketName: s3-file-uploads
     ObjectKey: test-output 
     RegionEndpoint: eu-west-1
   tags: # Tags that will be added to each of the deployment resources
